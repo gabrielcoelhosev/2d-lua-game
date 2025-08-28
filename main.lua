@@ -3,23 +3,24 @@ function love.load()
     player = {}
     player.x = 400  -- posicao do player horizontalmente
     player.y = 200 -- posicao do player verticalmente
+    player.speed = 4
 end
 
 function love.update(dt) -- love.update altera cada frame
     if love.keyboard.isDown('right') then
-        player.x = player.x + 3 -- a cada frame a posicao x ira aumantar 3 para a direita
+        player.x = player.x + player.speed -- a cada frame a posicao x ira aumantar player.speed para a direita
     end
 
     if love.keyboard.isDown('left') then
-        player.x = player.x - 3
+        player.x = player.x - player.speed
     end
 
     if love.keyboard.isDown('up') then
-        player.y = player.y - 3
+        player.y = player.y - player.speed
     end
 
     if love.keyboard.isDown('down') then
-        player.y = player.y + 3
+        player.y = player.y + player.speed
     end
 
 
